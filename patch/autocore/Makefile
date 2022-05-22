@@ -41,6 +41,8 @@ define Build/Compile
 endef
 
 define Package/autocore-arm/install
+        $(INSTALL_DIR) $(1)/etc/init.d
+	$(INSTALL_BIN) ./files/arm/nat6 $(1)/etc/init.d/
 	$(INSTALL_DIR) $(1)/etc
 	$(INSTALL_DATA) ./files/arm/index.htm $(1)/etc/
 	$(INSTALL_DIR) $(1)/etc/uci-defaults
